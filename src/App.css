@@ -1,0 +1,25 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.entradas{
+  width: 40%;
+  margin: auto;
+  margin-top: 5em;
+  display: flex;
+  justify-content: space-between;
+}
+.entradas input, button{
+  padding: 0.5em;
+}
+
+.repos{
+  display: flex;
+  flex-direction: column;
+
+  width: 20%;
+  margin: auto;
+  margin-top: 3em;
+}
