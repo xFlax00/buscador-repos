@@ -5,28 +5,29 @@ import List from './components/List/List'
 function App() {
 
   const [users, setUsers] = useState()
+  const [repos, setRepos] = useState()
 
   useEffect(() => {
       fetch(`https://api.github.com/users/xFlax00/repos`)
       .then(res => res.json())
-      .then(data => setUsers(data))
-      
+      .then(data => setUsers(data)) 
     }, [])
 
-  
+  const [text, setText] = useState()
 
-  /* function search(event){
-    event.preventDefault()
-    users && (
-      users.map((item) => {
-        return setRepos([...repos, item.name])
-      })
-    )
-  } */
-  const [filt, setFilt] = useState()
+  function search(){
+    setRepos(users)
+  }
 
-  function filtred(){
-    console.log(filt)
+  function filtred(tx){
+    console.log(tx)
+    let filteredRepos = users.filter((item) => {
+      return item.name.includes(tx)
+    })
+
+    setRepos(filteredRepos)
+
+    console.log(users)
   }
 
   return (
@@ -35,17 +36,17 @@ function App() {
 
         <div>
           <input id="usuario" placeholder="Digite o nome do usuário"></input>
-          <button id="buscar">Buscar</button>
+          <button id="buscar" onClick={() => {search()}}>Buscar</button>
         </div>
 
         <div id="filtro">
-          <input placeholder="Digite o nome do repositório" onChange={(e) => setFilt(e.target.value)}></input>
-          <button onClick={filtred}>Filtrar</button>
+          <input placeholder="Digite o nome do repositório" onChange={(e) => setText(e.target.value)}></input>
+          <button onClick={() => {filtred(text)}}>Filtrar</button>
         </div>
       
       </section>
 
-      <List items={users}></List>
+      <List items={repos}></List>
     </div>
   );
 }
