@@ -1,3 +1,5 @@
+import './list.css'
+
 function List(props){
 
     return(
