@@ -8,13 +8,22 @@ function App() {
   const [users, setUsers] = useState()
   const [repos, setRepos] = useState()
 
+  const [usuario, setUsuario] = useState("xFlax00")
+  const handleUsuario = (text) => {
+    console.log(text)
+    setUsuario(text)
+    console.log("user: " + usuario)
+    
+  }
+
+
   useEffect(() => {
-      fetch(`https://api.github.com/users/xFlax00/repos`)
+      fetch(`https://api.github.com/users/${usuario}/repos`)
       .then(res => res.json())
       .then(data => setUsers(data)) 
-    }, [])
+    }, [usuario])
 
-  function search(){
+  function search(usu){
     setRepos(users)
   }
 
@@ -34,7 +43,7 @@ function App() {
 
       <h1 className='title'>Buscar Repositório</h1>
 
-      <Form search={search} filtred={filtred}></Form>
+      <Form search={search} filtred={filtred} handleUsuario={handleUsuario}></Form>
       <List items={repos}></List>
 
     </div>

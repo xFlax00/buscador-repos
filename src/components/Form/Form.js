@@ -1,20 +1,21 @@
 import { useState } from 'react'
 
-function Form(props){
+function Form({search, filtred, handleUsuario}){
 
+    const [textUser, setTextUser] = useState("")
     const [text, setText] = useState()
 
     return(
         <section className="entradas">
 
         <div>
-          <input id="usuario" placeholder="Digite o nome do usuário"></input>
-          <button id="buscar" onClick={() => {props.search()}}>Buscar</button>
+          <input id="usuario" placeholder="Digite o nome do usuário" onChange={(e) => setTextUser(e.target.value)} ></input>
+          <button id="buscar" onChange={handleUsuario(textUser)} onClick={search}>Buscar</button>
         </div>
 
         <div id="filtro">
           <input placeholder="Digite o nome do repositório" onChange={(e) => setText(e.target.value)}></input>
-          <button onClick={() => {props.filtred(text)}}>Filtrar</button>
+          <button onClick={() => {filtred(text)}}>Filtrar</button>
         </div>
       
       </section>
