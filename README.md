@@ -1,5 +1,5 @@
 # Buscador de repositório
-> Você pode pesquisar repositórios e filtrar sua pesquisa.
+> Você pode pesquisar repositórios github e filtrar sua pesquisa.
 
 ### Instruções
 
