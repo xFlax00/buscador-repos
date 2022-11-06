@@ -5,7 +5,13 @@
 }
 
 body{
-  background-color: #A5A692;
+  background-color: #111;
+  color: rgb(18, 18, 172);
+}
+
+.title{
+  margin-top: 1em;
+  text-align: center;
 }
 
 .entradas{
