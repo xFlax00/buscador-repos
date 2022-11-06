@@ -16,7 +16,7 @@ function Form({search, filtred, handleUsuario}){
 
         <div>
           <input id="usuario" placeholder="Digite o nome do usuário" onChange={(e) => setTextUser(e.target.value)} ></input>
-          <button id="buscar" onClick={search}>Buscar</button>
+          <button id="buscar" onClick={() => search(textUser)}>Buscar</button>
         </div>
 
         <div id="filtro">
