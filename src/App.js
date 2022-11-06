@@ -8,7 +8,7 @@ function App() {
   const [users, setUsers] = useState()
   const [repos, setRepos] = useState()
 
-  const [usuario, setUsuario] = useState("xFlax00")
+  const [usuario, setUsuario] = useState("vilmio")
   const handleUsuario = (text) => {
     console.log(text)
     setUsuario(text)
@@ -16,11 +16,11 @@ function App() {
     
   }
 
-
   useEffect(() => {
       fetch(`https://api.github.com/users/${usuario}/repos`)
       .then(res => res.json())
-      .then(data => setUsers(data)) 
+      .then(data => {data.message!=="Not Found" ? setUsers(data) : console.log("Not Found")})
+      
     }, [usuario])
 
   function search(usu){

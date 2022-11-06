@@ -1,16 +1,22 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function Form({search, filtred, handleUsuario}){
 
     const [textUser, setTextUser] = useState("")
     const [text, setText] = useState()
 
+    useEffect(() => {
+
+      handleUsuario(textUser)
+
+    }, [textUser])
+
     return(
         <section className="entradas">
 
         <div>
           <input id="usuario" placeholder="Digite o nome do usuário" onChange={(e) => setTextUser(e.target.value)} ></input>
-          <button id="buscar" onChange={handleUsuario(textUser)} onClick={search}>Buscar</button>
+          <button id="buscar" onClick={search}>Buscar</button>
         </div>
 
         <div id="filtro">
