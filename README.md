@@ -1,2 +1,2 @@
-# Repository Finder
-> You can search for repositories and filter your search
+# Buscador de repositório
+> Você pode pesquisar repositórios e filtrar sua pesquisa.
