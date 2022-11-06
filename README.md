@@ -1,8 +1,6 @@
 # Buscador de repositório
 > Você pode pesquisar repositórios e filtrar sua pesquisa.
 
-<br>
-
 ### Instruções
 
 1 - Baixe o repositório:
