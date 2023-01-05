@@ -1,3 +1,5 @@
+import './Form.css'
+
 import { useEffect, useState } from 'react'
 
 function Form({search, filtred, handleUsuario}){
@@ -12,7 +14,7 @@ function Form({search, filtred, handleUsuario}){
     }, [textUser])
 
     return(
-        <section className="entradas">
+      <section className="entradas">
 
         <div>
           <input id="usuario" placeholder="Digite o nome do usuário" onChange={(e) => setTextUser(e.target.value)} ></input>

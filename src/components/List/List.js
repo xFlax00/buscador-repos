@@ -1,4 +1,4 @@
-import './list.css'
+import './List.css'
 
 function List(props){
 

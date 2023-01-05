@@ -1,0 +1,11 @@
+.repos{
+    display: flex;
+    flex-direction: column;
+
+    width: 70%;
+    margin: auto;
+    margin-top: 0em;
+}
+.repos li{
+    margin-bottom: 0.3rem;
+}

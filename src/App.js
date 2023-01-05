@@ -41,10 +41,13 @@ function App() {
   return (
     <div className="App">
 
+    <main className="box-content">
       <h1 className='title'>Buscar Repositório</h1>
 
       <Form search={search} filtred={filtred} handleUsuario={handleUsuario}></Form>
       <List items={repos}></List>
+    </main>
+      
 
     </div>
   );

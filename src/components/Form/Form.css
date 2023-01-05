@@ -1,0 +1,21 @@
+.entradas{
+    width: 100%;
+    margin: 3em auto 2em auto;
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+.entradas input, button{
+    padding: 0.7em;
+    border: none;
+    border-radius: 1px;
+}
+
+.entradas input{
+    margin-right: 0.2rem;
+}
+
+.entradas button{
+    background-color: rgba(0, 255, 255, 0.644);
+    cursor: pointer;
+}
