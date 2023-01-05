@@ -5,37 +5,36 @@ import List from './components/List/List'
 
 function App() {
 
-  const [users, setUsers] = useState()
   const [repos, setRepos] = useState()
 
-  const [usuario, setUsuario] = useState("")
+  let recovery
 
-  const handleUsuario = (text) => {
-    setUsuario(text)
-    
-  }
-
-  useEffect(() => {
-    fetch(`https://api.github.com/users/${usuario}/repos`)
+  function search(text){
+    /* setRepos(users) */
+    /* console.log(text) */
+    fetch(`https://api.github.com/users/${text}/repos`)
     .then(res => res.json())
-    .then(data => {data.message!=="Not Found" ? setUsers(data) : console.log("Not Found")})
-    
-  }, [usuario])
+    .then(data => {data.message!=="Not Found" ? setRepos(data): console.log("Not Found")})
 
-  function search(){
-    setRepos(users)
   }
-
 
   function filtred(tx){
+
+    recovery = repos
+    console.log(repos)
+    console.log(recovery)
+
     console.log(tx)
-    let filteredRepos = users.filter((item) => {
-      return item.name.includes(tx)
-    })
 
+    let filteredRepos
+
+    if(repos){
+      filteredRepos = repos.filter((item) => {
+        return item.name.includes(tx)
+      })
+    }
+    
     setRepos(filteredRepos)
-
-    console.log(users)
   }
 
   return (
@@ -44,8 +43,8 @@ function App() {
     <main className="box-content">
       <h1 className='title'>Buscar Repositório</h1>
 
-      <Form search={search} filtred={filtred} handleUsuario={handleUsuario}></Form>
-      <List items={repos}></List>
+      <Form search={search} filtred={filtred}></Form>
+      <List items={repos} recovery={recovery}></List>
     </main>
       
 

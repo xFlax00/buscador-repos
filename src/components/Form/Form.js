@@ -7,12 +7,6 @@ function Form({search, filtred, handleUsuario}){
     const [textUser, setTextUser] = useState("")
     const [text, setText] = useState()
 
-    useEffect(() => {
-
-      handleUsuario(textUser)
-
-    }, [textUser])
-
     return(
       <section className="entradas">
 

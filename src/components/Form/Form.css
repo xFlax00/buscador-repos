@@ -19,3 +19,27 @@
     background-color: rgba(0, 255, 255, 0.644);
     cursor: pointer;
 }
+
+@media screen and (max-width: 700px){
+
+    .entradas{
+        gap: 0;
+    }
+    .entradas input, button{
+        padding: 0.5em;
+        border: none;
+        border-radius: 1px;
+    }
+    .entradas input{
+        width: 60%;
+        margin-right: 3px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .entradas input, button{
+        display: block;
+        width: 80%;
+        margin: 0 auto .5rem auto;
+    }
+}

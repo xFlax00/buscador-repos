@@ -10,7 +10,7 @@ body{
 }
 
 .box-content{
-  border: 1px solid aqua;
+  border: 2px solid aqua;
   border-radius: 3%;
   background-color:  #444;
   box-shadow: 0.5px 0.5px 10px 0.5px black;
@@ -23,10 +23,25 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 
 }
 
 .title{
   margin-top: 1em;
   text-align: center;
+}
+
+@media screen and (max-width: 1300px){
+  .box-content{
+    max-width: 70%;
+  }
+}
+
+@media screen and (max-width: 900px){
+
+  .box-content{
+    max-width: 90%;
+  }
+  
 }
