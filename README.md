@@ -26,3 +26,12 @@ npm install
 ```
 npm start
 ```
+
+4 - Acesse o endereço:
+```
+http://localhost:3000
+```
+
+<br>
+
+Created by [xflax00](https://github.comx/xflax00)
