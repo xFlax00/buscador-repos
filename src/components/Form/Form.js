@@ -1,8 +1,8 @@
 import './Form.css'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
-function Form({search, filtred, handleUsuario}){
+function Form({search, filtred}){
 
     const [textUser, setTextUser] = useState("")
     const [text, setText] = useState()

@@ -1,5 +1,5 @@
 import './App.css';
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Form from './components/Form/Form'
 import List from './components/List/List'
 
@@ -10,8 +10,6 @@ function App() {
   let recovery
 
   function search(text){
-    /* setRepos(users) */
-    /* console.log(text) */
     fetch(`https://api.github.com/users/${text}/repos`)
     .then(res => res.json())
     .then(data => {data.message!=="Not Found" ? setRepos(data): console.log("Not Found")})
