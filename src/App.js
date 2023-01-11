@@ -18,21 +18,9 @@ function App() {
 
   function filtred(tx){
 
-    recovery = repos
-    console.log(repos)
-    console.log(recovery)
-
-    console.log(tx)
-
-    let filteredRepos
-
-    if(repos){
-      filteredRepos = repos.filter((item) => {
-        return item.name.includes(tx)
-      })
-    }
-    
-    setRepos(filteredRepos)
+    setRepos((prevRepos) => {
+      return prevRepos.filter((repo) => repo.name.includes(tx))
+    })
   }
 
   return (
